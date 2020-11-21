@@ -1,0 +1,42 @@
+<%- include('partials/header') -%>
+
+<div class="container mt-5 w-50">
+
+    <h2 class="mb-4">Search Student</h2>
+
+    <form action="/student" method="GET">
+        <input type="text" name="name" class="form-control" placeholder="student Name">
+
+        <button type="submit" class="btn btn-danger btn-block mt-3">Search in Database</button>
+
+    </form>
+
+    <% if(student) { %>
+    <h4 class="text-danger my-4">Search Results: </h4>
+    <table class="table table-bordered" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td><%= student.name %></td>
+                <td><%= student.department %></td>
+                <td>$<%= student.year %></td>
+            </tr>
+
+        </tbody>
+    </table>
+ <% } else if(student != ''){ %>
+
+    <div class="alert alert-danger mt-4">Student does not exist with this name.</div>
+
+    <% } %>
+
+</div>
+
+<%- include('partials/footer') -%>

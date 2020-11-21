@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/css/maincss.css">
+</head>
+<body>
+    <main>
+        <form class="login-form" action="/checklogin" method="POST">
+            <div class="form-control">
+                <label for="EmailId">Email Id</label>
+                <input type="text" name="EmailId" id="EmailId">
+            </div>
+
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" name="Password" id="Password">
+            </div>
+
+            <button class="btn" type="submit">LOGIN</button>
+        </form>
+    </main>
+</body>
+</html>
